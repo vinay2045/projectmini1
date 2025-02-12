@@ -1,99 +1,210 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Forever</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="main">
-            
-            <div class="maintitle">
-                <div class="titleimage">
-                    <img src="WhatsApp Image 2024-05-10 at 5.49.55 PM.jpeg" alt="">
-                </div>
-                <h1 class="title">Forever</h1>
-            </div>
-            <div class="nav">
-                <div class="nav-part1"> 
-                    <a href="#home"><h3>Home</h3></a>
-                </div>
-                
-                <div class="search-container">
-                    <input type="text" class="search-box" placeholder="search...">
-                    <button class="search-button"><h3><i class="ri-search-2-line"></i>Search</h3></button>
-                </div>
-                <div class="nav-part2">
-                    <a href="#mens-wear"><h3>Mens Wear</h3></a>
-                    <a href="#women-wear"><h3>Women Wear</h3></a>
-                    <a href="#kids-wear"><h3>Kids wear</h3></a>
-                </div>
-            </div>
-            <h1 class="title-modernwear">Modern-Wear</h1>
-            <div class="modern-wear">
-                <!----
-                <a href=""><div class="product">
-                    
-                        <div class="product-part1">
-                            <img  id=""src="https://images.unsplash.com/photo-1571153041245-5c72320bc914?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1vZGVybiUyMHdlYXJ8ZW58MHx8MHx8fDA%3D" alt="">
-        
-                        </div>
-                        <div class="product-part2">
-                            <h4>T-shirt</h4>
-                            <h4 class="price">price:300</h4>
-                            <div class="checkout">
-                                <button><a href=""><h3>Buy Now</h3></a></button>
-                                <button><a href=""><h3>Add to Cart</h3></a></button>
-                                <button onclick="editProduct(this)"><h3>Edit</h3></button>
-                                <button onclick="deleteProduct(this)"><h3>Delete</h3></button>
-                            </div>
-                           
-                            
-        
-                        </div>
-                    
-                    
-    
-                </div></a>
-                ----->
-                <!-- Product items will be displayed here -->
-            </div>
-            <div class="product-main" id="product-form-container">
-                <h5>Adding Product</h5>
-                <div class="add-product">
-                    <form id="add-product-form">
-                        <input type="file" name="product-image" id="product-image" accept="image/*">
-                        <div id="msg">
+```css
+/* style.css */
+body {
+    background-color: #FFA500; /* Orange background */
+    font-family: 'Cormorant Garamond', serif; /* Use Cormorant Garamond as the default font */
+    margin: 0; /* Remove default body margins */
+    padding: 0;
+}
 
-                        </div>
-                        <label for="model">Select Model:</label>
-                        <select id="model" name="model">
-                            <option value="T-shirt">T-shirt</option>
-                            <option value="Shirts">Shirts</option>
-                            <option value="Women">Women wear</option>
-                        </select>
-                        <div id="msg">
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Ensure the page takes up the full viewport height */
+    background-color: #FFA500; /*Maintain background color */
 
-                        </div>
-                        <label for="price">Price:</label>
-                        <input type="number" id="price" name="price" min="0" step="0.01">
-                        <div id="msg">
+}
 
-                        </div>
-                        <button type="submit">Add Product</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </body>
-    
-    <script src="main.js"></script>
-    </html>
- 
-    
+.maintitle {
+    display: flex;
+    align-items: center; /*Vertically align title and image*/
+    width: 100%;
+    padding: 20px 0; /* Add padding to top and bottom */
+    background-color: rgba(255, 165, 0, 0.8); /* semi-transparent orange */
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2); /* Add a subtle shadow */
+
+}
+
+
+.titleimage img {
+    max-width: 100px; /*Adjust image size as needed*/
+    max-height: 100px;
+    margin-right: 20px;
+    border-radius: 50%; /*Make the image circular */
+}
+
+.title {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 3em;
+    color: white; /*Ensure title text is visible*/
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around; /* Distribute nav items evenly */
+    width: 80%;
+    padding: 10px 0;
+    background-color: rgba(255, 165, 0, 0.8);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2); /* Add a subtle shadow */
+
+}
+
+.nav-part1, .nav-part2 {
+    display: flex;
+
+}
+
+.nav h3 {
+    margin: 0 10px; /*Add spacing between nav items */
+    color: white; /* Ensure nav text is visible*/
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /*Rounded corners for search box */
+}
+
+.search-button {
+    padding: 10px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Rounded corners for search button */
+    cursor: pointer;
+
+}
+
+.title-modernwear {
+    font-size: 2em;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px #000000; /* Add text shadow for better visibility */
+}
+
+.modern-wear {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    padding: 20px;
+
+}
+
+
+/* Style for product items (add more styles as needed) */
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px; /* Adjust width as needed */
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Add a subtle shadow */
+
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-part2 {
+    text-align: center; /*Center align text */
+
+}
+
+
+.product h4 {
+    margin: 5px 0;
+}
+
+.checkout button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.product-main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Add a subtle shadow */
+    margin: 20px;
+    width: 400px; /* adjust width as needed */
+}
+
+.add-product {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-product label {
+    margin-bottom: 5px;
+}
+
+.add-product input, .add-product select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-product button {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#msg {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/*Responsive Design (adjust as needed) */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%;
+    }
+    .nav-part1, .nav-part2 {
+        width: 100%;
+        text-align: center; /* Center align items on smaller screens */
+    }
+    .search-container {
+        flex-direction: column; /* Stack search items vertically */
+        width: 100%;
+    }
+    .search-box {
+        width: 100%;
+        margin-bottom: 10px; /*Add margin to separate items */
+    }
+    .product {
+        width: 100%; /* Make products full-width on smaller screens */
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+    .modern-wear {
+        width: 100%; /* Make products full-width on smaller screens */
+    }
+    .product-main {
+        width: 100%; /* Make form full-width on smaller screens */
+    }
+}
+```
+
+This CSS provides a more visually appealing design with an orange background, improved layout, and better responsiveness for different screen sizes. Remember to replace `"WhatsApp Image 2024-05-10 at 5.49.55 PM.jpeg"` with the actual path to your image.  The commented-out product section needs to be populated dynamically using your JavaScript (`main.js`).  This CSS focuses on styling the existing HTML structure.  More sophisticated styling can be added based on your specific design requirements.
